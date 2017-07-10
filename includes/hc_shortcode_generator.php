@@ -64,11 +64,7 @@
 
 		</form>
 
-		<div class="hc-shortgen__result" id="hcShortGenResult">
-
-			<pre></pre>
-
-		</div>
+		<div class="hc-shortgen__result" id="hcShortGenResult"></div>
 
 	</div>
 
