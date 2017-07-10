@@ -49,7 +49,7 @@ function hc_button() {
 
         <label><?php _e('HC Button Text:', 'hcp_posts'); ?></label><br />
 
-        <input name="hc_text" type="text" value="<?php echo $hc_text; ?>">
+        <input style="width: 100%" name="hc_text" type="text" value="<?php echo $hc_text; ?>">
 
     </p>
 
@@ -57,7 +57,7 @@ function hc_button() {
 
         <label><?php _e('HC Button Link:', 'hcp_posts'); ?></label><br />
 
-		<input name="hc_link" type="text" value="<?php echo $hc_link; ?>">
+		<input style="width: 100%" name="hc_link" type="text" value="<?php echo $hc_link; ?>">
 
     </p>
 
