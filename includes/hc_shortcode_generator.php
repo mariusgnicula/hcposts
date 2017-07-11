@@ -18,7 +18,12 @@
 
 				</label> <br />
 
-				<input style="width: 100%; max-width: 400px" type="number" name="hc-shortgen_number" id="hcShortGenNumber">
+				<input
+					style="width: 100%; max-width: 400px"
+					type="number"
+					name="hc-shortgen_number"
+					id="hcShortGenNumber"
+					placeholder="<?php _e('Please insert number here', 'hcp_posts'); ?>">
 
 			</p>
 
