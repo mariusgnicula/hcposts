@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: MN Posts
-Plugin URI: https://github.com/mariusgnicula/hcposts
+Plugin URI: https://github.com/mariusgnicula/mnposts
 Description: A simple Wordpress Posts Plugin
 Version: 0.1
 Author: Marius Nicula
