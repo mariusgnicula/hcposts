@@ -45,12 +45,12 @@ function hcp_posts() {
 		'show_in_menu'          => true,
 		'menu_position'         => 5,
 		'menu_icon'             => 'dashicons-calendar-alt',
-		'show_in_admin_bar'     => true,
-		'show_in_nav_menus'     => true,
+		'show_in_admin_bar'     => false,
+		'show_in_nav_menus'     => false,
 		'can_export'            => true,
-		'has_archive'           => true,
+		'has_archive'           => false,
 		'exclude_from_search'   => false,
-		'publicly_queryable'    => true,
+		'publicly_queryable'    => false,
 		'capability_type'       => 'page',
 	];
 	register_post_type( 'hcposts', $args );

@@ -50,7 +50,20 @@ function hc_posts($atts) {
 
 	$hc_posts = array_merge($hc_init_posts, $hc_addon_posts);
 
-	?><pre><?php print_r($hc_posts); ?></pre><?php
+	$hc_args = [
+        'post_type' => 'hcposts',
+        'posts_per_page' => $hc_number,
+        'post__in' => $hc_posts
+    ];
+
+	$hc_query = new WP_Query($hc_args);
+
+	$hc_posts_output = '';
+
+	include_once HCP_PLUGIN_DIR . '/includes/hc_loop.php';
+
+	return $hc_posts_output;
 
 }
+
 add_shortcode('hc_posts', 'hc_posts');
