@@ -8,13 +8,13 @@ function mn_posts($atts) {
 	// get shortcode values and set defaults
 
 	$a = shortcode_atts( [
-		'number' => 3,
-		'posts' => []
+		'limit' => 3,
+		'ids' => []
 	], $atts );
 
 	// save those values, whether they are the default ones or custom ones, to variables
-	$mn_number = (int)$a['number'];
-	$mn_init_posts = $a['posts'];
+	$mn_number = (int)$a['limit'];
+	$mn_init_posts = $a['ids'];
 	
 	// convert posts argument to array
 	$mn_init_posts = explode(',', $mn_init_posts);

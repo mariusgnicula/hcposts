@@ -24,5 +24,5 @@ mnSubmit.addEventListener('click', function(e) {
 
     // create the shortcode
 
-   mnResult.innerHTML = '[mn_posts number="' + mnNewNumber + '" posts="' + mnPostArray +'"]';
+   mnResult.innerHTML = '[mn_posts limit="' + mnNewNumber + '" ids="' + mnPostArray +'"]';
 });
