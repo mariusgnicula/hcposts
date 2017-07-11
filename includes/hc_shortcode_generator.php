@@ -25,7 +25,7 @@
 			<p>
 				<label for="hc-shortgen_number">
 
-					<?php _e('Please select which posts you which to display', 'hcp_posts'); ?>
+					<?php _e('Please select which posts you wish to display', 'hcp_posts'); ?>
 
 				</label> <br />
 
