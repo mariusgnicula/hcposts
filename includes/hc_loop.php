@@ -1,10 +1,10 @@
 <?php if ( $hc_query->have_posts() ) :
 
-	$hc_posts_output .= '<div class="container">';
+	$hc_posts_output .= '<div class="hc_post__container row">';
 
 		while ( $hc_query->have_posts() ) : $hc_query->the_post();
 
-			$hc_class_array = get_post_class("hcpost");
+			$hc_class_array = get_post_class("hcpost col-sm-12 col-md-6 col-lg-4");
 
 			$hc_posts_output .= '<article class="';
 
@@ -22,7 +22,7 @@
 
 				$hc_posts_output .= '<p>' . get_the_content() . '</p>';
 
-				$hc_posts_output .= '<a href="' . get_post_meta(get_the_ID(), 'hc_button_link', true) . '">';
+				$hc_posts_output .= '<a class="btn btn-primary" href="' . get_post_meta(get_the_ID(), 'hc_button_link', true) . '">';
 
 					$hc_posts_output .= get_post_meta(get_the_ID(), 'hc_button_text', true);
 
