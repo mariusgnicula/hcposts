@@ -1,7 +1,7 @@
 <?php
 
 // function to create shortcode
-// so the shortcode generator can create a number value and a posts value
+// so the shortcode generator can create a limit value and an ids value
 
 function mn_posts($atts) {
 
@@ -19,13 +19,13 @@ function mn_posts($atts) {
 	// convert posts argument to array
 	$mn_init_posts = explode(',', $mn_init_posts);
 	
-	// check whether the set number is higher than the number of chosen posts
+	// check whether the set limit is higher than the number of chosen posts
 	// set a variable as an array
 	$per_page = $mn_number - count($mn_init_posts);
 	$mn_addon_posts = [];
 
-	// if the number set in the shortcode is greater than the number of chosen posts
-	// add more posts until number necessity is met
+	// if the limit set in the shortcode is greater than the number of chosen posts
+	// add more posts until limit necessity is met
 	// ignore posts that have already been chosen, so as to avoid duplicate content
 	if ( $per_page > 0 ) {
 		$addon_args = [
@@ -45,7 +45,7 @@ function mn_posts($atts) {
 		}
 	}
 	
-	// now merge chosen posts with the difference to ensure shortcode number is met
+	// now merge chosen posts with the difference to ensure shortcode limit is met
 	// we now have our array of post IDs
 
 	$mn_posts = array_merge($mn_init_posts, $mn_addon_posts);
