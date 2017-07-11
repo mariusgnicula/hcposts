@@ -3,7 +3,7 @@
 // function to create shortcode
 // so the shortcode generator can create a number value and a posts value
 
-function hc_posts($atts) {
+function mn_posts($atts) {
 
 	// get shortcode values and set defaults
 
@@ -13,34 +13,34 @@ function hc_posts($atts) {
 	], $atts );
 
 	// save those values, whether they are the default ones or custom ones, to variables
-	$hc_number = (int)$a['number'];
-	$hc_init_posts = $a['posts'];
+	$mn_number = (int)$a['number'];
+	$mn_init_posts = $a['posts'];
 	
 	// convert posts argument to array
-	$hc_init_posts = explode(',', $hc_init_posts);
+	$mn_init_posts = explode(',', $mn_init_posts);
 	
 	// check whether the set number is higher than the number of chosen posts
 	// set a variable as an array
-	$per_page = $hc_number - count($hc_init_posts);
-	$hc_addon_posts = [];
+	$per_page = $mn_number - count($mn_init_posts);
+	$mn_addon_posts = [];
 
 	// if the number set in the shortcode is greater than the number of chosen posts
 	// add more posts until number necessity is met
 	// ignore posts that have already been chosen, so as to avoid duplicate content
 	if ( $per_page > 0 ) {
 		$addon_args = [
-			'post_type' => 'hcposts',
+			'post_type' => 'mnposts',
 			'posts_per_page' => $per_page,
-			'post__not_in' => $hc_init_posts
+			'post__not_in' => $mn_init_posts
 		];
 
-		$hc_addon_posts_array = get_posts($addon_args);
+		$mn_addon_posts_array = get_posts($addon_args);
 		
 		// push new values to recently created array variable
 
-		foreach ( $hc_addon_posts_array as $hc_addon_posts_array_item ) {
+		foreach ( $mn_addon_posts_array as $mn_addon_posts_array_item ) {
 			
-			array_push($hc_addon_posts, $hc_addon_posts_array_item->ID);
+			array_push($mn_addon_posts, $mn_addon_posts_array_item->ID);
 			
 		}
 	}
@@ -48,22 +48,22 @@ function hc_posts($atts) {
 	// now merge chosen posts with the difference to ensure shortcode number is met
 	// we now have our array of post IDs
 
-	$hc_posts = array_merge($hc_init_posts, $hc_addon_posts);
+	$mn_posts = array_merge($mn_init_posts, $mn_addon_posts);
 
-	$hc_args = [
-        'post_type' => 'hcposts',
-        'posts_per_page' => $hc_number,
-        'post__in' => $hc_posts
+	$mn_args = [
+        'post_type' => 'mnposts',
+        'posts_per_page' => $mn_number,
+        'post__in' => $mn_posts
     ];
 
-	$hc_query = new WP_Query($hc_args);
+	$mn_query = new WP_Query($mn_args);
 
-	$hc_posts_output = '';
+	$mn_posts_output = '';
 
-	include_once HCP_PLUGIN_DIR . '/includes/hc_loop.php';
+	include_once MN_PLUGIN_DIR . '/includes/mn_loop.php';
 
-	return $hc_posts_output;
+	return $mn_posts_output;
 
 }
 
-add_shortcode('hc_posts', 'hc_posts');
+add_shortcode('mn_posts', 'mn_posts');
