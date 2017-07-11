@@ -1,3 +1,5 @@
+<!-- Shortcode generator -->
+
 <div class="wrap">
 
 	<div class="mn-shorgen">
@@ -7,6 +9,8 @@
 			<?php _e('This is a MNP Shortcode Generator. Make sure to copy the shortcode and insert it wherever you like.', 'mnp_posts'); ?>
 
 		</p>
+
+        <!-- Include the form that has an input for the number and a selection of the mnposts -->
 
 		<form>
 

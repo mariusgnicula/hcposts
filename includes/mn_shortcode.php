@@ -50,6 +50,8 @@ function mn_posts($atts) {
 
 	$mn_posts = array_merge($mn_init_posts, $mn_addon_posts);
 
+	// new WP_Query that only retrieves posts that are in $mn_posts array
+
 	$mn_args = [
         'post_type' => 'mnposts',
         'posts_per_page' => $mn_number,
@@ -60,7 +62,11 @@ function mn_posts($atts) {
 
 	$mn_posts_output = '';
 
+	// externalize the loop for better control
+
 	include_once MN_PLUGIN_DIR . '/includes/mn_loop.php';
+
+	// return loop output
 
 	return $mn_posts_output;
 

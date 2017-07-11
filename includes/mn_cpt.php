@@ -1,6 +1,7 @@
 <?php
 
 // create MN Posts CPT with all the trimmings
+// the CPT is not publicly queryable, so there is no need for excerpt
 
 function mnp_posts() {
 
